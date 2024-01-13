@@ -24,9 +24,14 @@ public class StringOps {
     //////                                               ///////
     ////////////////////////////////////////////////////////////
     public static void main(String[] args) {
-        System.out.println("You are currently not testing any function :)\nPlease change the main method");
+        //System.out.println("You are currently not testing any function :)\nPlease change the main method");
+        System.out.println(capVowelsLowRest("One two tHRee world"));
     }
-
+    /**
+     * This function takes as input a string containing only letters, organized into words that are separated with a single space
+     * The function returns a string in which all the English vowels (a,e,i,o,u) in the original strings are changed to uppercase, and all the other characters are changed to lowercase
+     * (if they were lowercase in the original string, they remain the same).
+     */
     public static String capVowelsLowRest (String string) {
         String temp = "";
         for (int i = 0; i < string.length(); i++){
@@ -37,6 +42,13 @@ public class StringOps {
                 case 'o':
                 case 'u':
                     temp += (char)(string.charAt(i) - 32);
+                    break;
+                case 'A':
+                case 'E':
+                case 'I':
+                case 'O':
+                case 'U':
+                    temp += string.charAt(i);
                     break;
                 default:
                     if (string.charAt(i) > 64 && string.charAt(i) < 91){
