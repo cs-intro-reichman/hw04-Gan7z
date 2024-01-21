@@ -11,12 +11,14 @@ public class ArrayOps {
     public static int findMissingInt (int [] array) {
         int sequenceSum = 0;
         int arraySum = 0;
+        // #feedback - you can have one loop and update sequenceSum and arraySum together.
         for(int i = 0; i <= array.length; i++){
             sequenceSum += i;
         }
         for(int i = 0; i < array.length; i++){
             arraySum += array[i];
         }
+        // #feedback - you can just return the result of the subtraction directly. If it equals 0, that's what you will return :)
         int answer = sequenceSum - arraySum;
         if (answer == 0){
             return 0;
@@ -32,6 +34,7 @@ public class ArrayOps {
      * If the number appears twice and it is the largest number, it is also the 2nd largest number. 
      */
     public static int secondMaxValue(int [] array) {
+        // #feedback - we can't be sure the array contains 2 values, so you need to check it.
         int maxValue = Math.max(array[0], array[1]);
         int secondMaxValue = Math.min(array[0], array[1]);
         for (int i = 2; i < array.length;i++){
@@ -92,6 +95,7 @@ public class ArrayOps {
          * so we need to find the index where there is a change in value
          * For efficency we should start checking for ascending or descending order from that specific index, instead from the beginning of the array
          */
+        // #feedback - it's ok if the values are the same, you can just check >= or <=.
         int startIndex = 0;
         for(int i = 0; i < array.length-1; i++){
             if (array[i] != array[i+1]){
@@ -103,6 +107,7 @@ public class ArrayOps {
             }
         }
 
+        // #feedback - no need "?true : false", the "greater than" already returns a boolean value.
         boolean check = array[startIndex] > array[startIndex+1] ? true : false; // Is the array in ascending order or descending?
         for(int i = startIndex; i < array.length-1; i++){
             if (check == false){ // Ascending
