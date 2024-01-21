@@ -51,6 +51,7 @@ public class StringOps {
                     temp += string.charAt(i);
                     break;
                 default:
+                    // #feedback - it is usually better to use the actual character, e.g. 'a' instead of its number representation.
                     if (string.charAt(i) > 64 && string.charAt(i) < 91){
                         temp += (char)(string.charAt(i) + 32);
                     } else {
